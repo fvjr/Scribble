@@ -1,0 +1,8 @@
+{
+  "name": "Text Editor",
+  "short_name": "Editor",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "Browser based text editor"
+}
