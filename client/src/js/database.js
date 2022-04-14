@@ -39,13 +39,14 @@ export const putDb = async (content) => {
   // if (err) {
   //   return console.error("putDb not implemented");
   // }
+  return result;
 };
 
 // // TODO: Add logic for a method that gets all the content from the database
 // export const getDb = async () => console.error("getDb not implemented");
 
 // TODO: Add logic for a method that gets all the content from the database
-export const getDb = async (content) => {
+export const getDb = async () => {
   console.log("Getting information from the database");
 
   //create a connection to the DB and the version of the DB we wish to use
@@ -58,7 +59,7 @@ export const getDb = async (content) => {
   const store = tx.objectStore("jate");
 
   //get ALL data from the database
-  const request = store.getAll(content);
+  const request = store.getAll();
 
   //get confirmation of the request to the database
   const result = await request;
