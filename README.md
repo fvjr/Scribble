@@ -31,6 +31,8 @@ Try the app at the deployed location: https://scribble-text-editor.herokuapp.com
 
 The app can be installed via the 'Install' button on the application's deployed page.
 
+![Project mock-up image.](./Assets/screenshot.PNG)
+
 ## Credits
 
 N/A
