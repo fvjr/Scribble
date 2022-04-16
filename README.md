@@ -43,7 +43,7 @@ https://developer.chrome.com/docs/workbox/service-worker-overview/
 
 https://developer.chrome.com/blog/getting-started-pwa/
 
-Started code provided by © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Starter code provided by © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
 
 ## Contributing
 
