@@ -15,13 +15,13 @@ const initdb = async () =>
 // // TODO: Add logic to a method that accepts some content and adds it to the database
 // export const putDb = async (content) => console.error('putDb not implemented');
 
-export const putDb = async (content) => {
+export const putDb = async (id, content) => {
   // export const putDb = async () => {
   console.log("Posting to the database");
 
   //create a connection to our database and the version of the database we wish to use
   const jateDb = await openDB("jate", 1);
-  console.log(jateDb);
+
   //create a new transaction and specify the database and data privileges
   const tx = jateDb.transaction("jate", "readwrite");
 
@@ -29,17 +29,16 @@ export const putDb = async (content) => {
   const store = tx.objectStore("jate");
 
   //pass in our desired content
-  const request = store.put({ id: 1, value: content });
+  const request = store.put({ id: id, value: content });
 
   //get confirmation of the request
   const result = await request;
-  console.log(`Data successfully saved to the database. Data: ${result}`);
 
   // if (err) {
-  //   return console.error("putDb not implemented");
+  //   return console.error('putDb not implemented');
   // }
-
-  return result;
+  console.log("Added to the db", result);
+  // return result;
 };
 
 // // TODO: Add logic for a method that gets all the content from the database
@@ -55,18 +54,21 @@ export const getDb = async () => {
 
   //create a new transaction and specify the database and data privileges
 
-  const tx = jateDb.transaction("jate", "readonly");
-  console.log(tx);
+  // const tx = jateDb.transaction("jate", "readonly");
+  const tx = jateDb.transaction("jate", "readwrite");
+
   //open up the object store we wish to use
   const store = tx.objectStore("jate");
-  console.log(store);
+
   //get ALL data from the database
   const request = store.getAll();
+
+  // const request = store.get({ id: 1, value: content });
 
   //get confirmation of the request to the database
   const result = await request;
   console.log("result.value", result);
-  return result;
+  // return result;
 
   // if (err) {
   //   console.error("getDb not implemented");
